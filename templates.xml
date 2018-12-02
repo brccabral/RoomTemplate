@@ -2,7 +2,7 @@
 <template format="4"
  revision="1"
  name="Room persistance template codes"
- description="Generate model classes, DAO, LiveData and ViewModel">
+ description="Generate entity, DAO, Repository classes">
 
  <category value="Other">
 
