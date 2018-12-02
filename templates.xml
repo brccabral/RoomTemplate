@@ -6,6 +6,30 @@
 
  <category value="Other">
 
- <parameters id="className"
-   
- >
+<!-- ENtity class-->
+ <parameters id="entityClass"
+  name="Entity class name"
+  type="string"
+  constraints="class|unique|nonempty"
+  help="The name of the Entity class"/>
+
+<!-- DAO interface-->
+  <parameter
+        id="daoInterface"
+        name="DAO interface name"
+        type="string"
+        constraints="interface|nonempty|unique"
+        help="The name of the your entity dao interface" />
+
+  <!-- database class that extends RoomDatabase-->
+  <parameter
+        id="databaseClass"
+        name="Database class name"
+        type="string"
+        constraints="class|nonempty|unique"
+        help="The name your database class" />
+
+   <globals file="globals.xml.ftl" />
+   <execute file="recipe.xml.ftl" />
+
+</template>
