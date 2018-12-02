@@ -2,12 +2,30 @@
 <template format="4"
  revision="1"
  name="Room persistance template codes"
+ minApi="7" 
+ minBuildApi="19"
  description="Generate model classes, DAO, LiveData and ViewModel">
 
  <category value="Other">
 
-<!-- ENtity class-->
- <parameters id="entityClass"
+ <!-- Entity class-->
+<parameters id="mainActivity" 
+  name="Entity class name" 
+  type="string" 
+  constraints="class|unique|nonempty" 
+  help="The name of your main activity"/>
+
+<parameter id="layoutName" 
+  name="Layout Name" 
+  type="string" 
+  constraints="layout|unique|nonempty" 
+  suggest="${activityToLayout(mainActivity)}" 
+  default="activity_main" 
+  help="The name of the layout to create for the activity" />
+
+
+<!-- Entity class-->
+ <parameter id="entityClass"
   name="Entity class name"
   type="string"
   constraints="class|unique|nonempty"

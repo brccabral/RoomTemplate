@@ -3,18 +3,17 @@
     package="${packageName}">
 
     <application
-        android:name="${packageName}.${classApplication}"
+        android:name="${packageName}.${mainActivity}"
+        android:label="@string/app_name"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".activities.MainActivity"
+            android:name="${packageName}.${mainActivity}"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
