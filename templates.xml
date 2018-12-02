@@ -6,6 +6,7 @@
  minBuildApi="19"
  description="Generate model classes, DAO, LiveData and ViewModel">
 
+
  <category value="Other">
 
  <!-- Entity class-->

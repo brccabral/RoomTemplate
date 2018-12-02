@@ -1,2 +1,2 @@
 # RoomTemplate
-Generate Room + LiveData + LiveData + ViewModel
+Android studio template to generate Room libray classes.
