@@ -1,20 +1,24 @@
 <?xml version="1.0"?>
 <recipe>
-	<dependency" />
+
+	<#if !(hasDependency('<#-- add room persistance dependency-->'))>
+		<dependency mavenUrl="add room persistance dependency"/>
+	</#if>
 	
     <instantiate from="AndroidManifest.xml.ftl"
              to="${escapeXmlAttribute(manifestOut)}/AndroidManifest.xml" />
 			 
-	<instantiate from="src/app_package/Application.java.ftl" to="${escapeXmlAttribute(srcOut)}/${classApplication}.java"/>
+	<instantiate from="src/app_package/Entity.java.ftl" 
+	to="${escapeXmlAttribute(srcOut)}/${entityClass}.java"/>
 	
-	<instantiate from="src/app_package/activities/MainActivity.java.ftl" to="${escapeXmlAttribute(srcOut)}/activities/${activityClass}.java"/>
+	<instantiate from="src/app_package/DaoInterface.java.ftl" 
+	to="${escapeXmlAttribute(srcOut)}/${daoInterface}.java"/>
 
-	<instantiate from="res/xml/analytics_global_config.xml.ftl" to="${escapeXmlAttribute(resOut)}/xml/analytics_global_config.xml"/>
-	
-	<instantiate from="res/layout/activity_main.xml.ftl" to="${escapeXmlAttribute(resOut)}/layout/${layoutName}.xml"/>
-	
-	<copy from="res/values/dimens.xml" to="${escapeXmlAttribute(resOut)}/values/dimens.xml"/>   
+	<instantiate from="src/app_package/Database.java.ftl" 
+	to="${escapeXmlAttribute(srcOut)}/activities/${databaseClass}.java"/>
 
-    <open file="${escapeXmlAttribute(srcOut)}/activities/${activityClass}.java" />
-    <open file="${escapeXmlAttribute(resOut)}/layout/${layoutName}.xml" />
+    <open file="${escapeXmlAttribute(srcOut)}/${entityClass}.java" />
+    <open file="${escapeXmlAttribute(srcOut)}/${daoInterface}.java" />
+	<open file="${escapeXmlAttribute(srcOut)}/${databaseClass}.java" />
+
 </recipe>
