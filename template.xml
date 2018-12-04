@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+
 <template format="4"
  revision="1"
  name="Room persistance template codes"
@@ -7,7 +8,7 @@
  description="Generate model classes, DAO, LiveData and ViewModel">
 
 
- <category value="Other">
+ <category value="Other"/>
 
  <!-- Entity class-->
 <parameters id="mainActivity" 
@@ -16,7 +17,8 @@
   constraints="class|unique|nonempty" 
   help="The name of your main activity"/>
 
-<parameter id="layoutName" 
+<parameter
+  id="layoutName" 
   name="Layout Name" 
   type="string" 
   constraints="layout|unique|nonempty" 
