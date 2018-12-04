@@ -2,7 +2,7 @@
 
 <template format="4"
  revision="1"
- name="Room persistance template codes"
+ name="Room persistance template"
  minApi="7" 
  minBuildApi="19"
  description="Generate model classes, DAO, LiveData and ViewModel">
