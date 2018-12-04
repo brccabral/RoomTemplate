@@ -9,7 +9,7 @@ import android.arch.persistence.room.OnConflictStrategy;
 
 import java.util.List;
 
-import xyz.godi.popularmovies.model.Movie;
+import ${packageName}.${entityClass};
 
 @Dao
 public interface ${daoInterface} {
