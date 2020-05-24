@@ -1,7 +1,4 @@
 dependencies {
-    <#if dependencyList?? >
-    <#list dependencyList as dependency>
-    implementation '${dependency}'
-    </#list>
-    </#if>
+    implementation "androidx.room:room-runtime:2.2.5"
+    annotationProcessor "androidx.room:room-compiler:2.2.5"
 }
