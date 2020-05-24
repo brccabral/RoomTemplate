@@ -1,8 +1,8 @@
-package ${packageName}
+package ${packageName};
 
-import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 
-import ${packageName}.R;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ${mainActivity} extends AppCompatActivity {
 
@@ -10,4 +10,6 @@ public class ${mainActivity} extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
 }

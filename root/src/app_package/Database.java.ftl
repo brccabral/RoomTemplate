@@ -1,11 +1,10 @@
 package ${packageName};
 
-import android.arch.persistence.room.Database;
-import android.arch.persistence.room.Room;
-import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
-import ${packageName}.${entityClass};
+import androidx.room.Database;
+import androidx.room.Room;
+import androidx.room.RoomDatabase;
 
 @Database(entities = {${entityClass}.class}, version = 1)
 public abstract class ${databaseClass} extends RoomDatabase {
@@ -17,7 +16,7 @@ public abstract class ${databaseClass} extends RoomDatabase {
             synchronized (${databaseClass}.class) {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                            ${databaseClass}.class,"your_database_name")
+                            ${databaseClass}.class,"your_database_name") //TODO replace "your_database_name" with your database name 
                             .build();
                 }
             }
