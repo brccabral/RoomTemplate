@@ -1,56 +1,52 @@
-<?xml version="1.0"?>
+<template
+    format="4"
+    revision="1"
+    name="Room persistance template"
+    minApi="7" 
+    minBuildApi="19"
+    description="Generate model classes, DAO, LiveData and ViewModel." >
 
-<template format="4"
- revision="1"
- name="Room persistance template"
- minApi="7" 
- minBuildApi="19"
- description="Generate model classes, DAO, LiveData and ViewModel">
+    <category value="Other" />
 
+    <parameter
+        id="mainActivity"
+        name="Activity Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="MainActivity"
+        help="Name of your new Activity" />
 
- <category value="Other"/>
+    <parameter
+        id="layoutName"
+        name="Layout Name"
+        type="string"
+        constraints="layout|unique|nonempty"
+        suggest="${activityToLayout(mainActivity)}" 
+        default="activity_main"
+        help="The name of the layout to create for the activity" />
 
- <!-- Entity class-->
-<parameters id="mainActivity" 
-  name="Entity class name" 
-  type="string" 
-  constraints="class|unique|nonempty" 
-  help="The name of your main activity"/>
+    <parameter
+        id="entityClass"
+        name="Entity class Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        help="The name of the Entity class" />
 
-<parameter
-  id="layoutName" 
-  name="Layout Name" 
-  type="string" 
-  constraints="layout|unique|nonempty" 
-  suggest="${activityToLayout(mainActivity)}" 
-  default="activity_main" 
-  help="The name of the layout to create for the activity" />
-
-
-<!-- Entity class-->
- <parameter id="entityClass"
-  name="Entity class name"
-  type="string"
-  constraints="class|unique|nonempty"
-  help="The name of the Entity class"/>
-
-<!-- DAO interface-->
-  <parameter
+    <parameter
         id="daoInterface"
         name="DAO interface name"
         type="string"
-        constraints="interface|nonempty|unique"
+        constraints="class|unique|nonempty"
         help="The name of the your entity dao interface" />
 
-  <!-- database class that extends RoomDatabase-->
-  <parameter
+    <parameter
         id="databaseClass"
         name="Database class name"
         type="string"
-        constraints="class|nonempty|unique"
+        constraints="class|unique|nonempty"
         help="The name your database class" />
 
-   <globals file="globals.xml.ftl" />
-   <execute file="recipe.xml.ftl" />
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
 
 </template>
